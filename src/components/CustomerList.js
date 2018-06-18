@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Customer from './Customer';
 import axios from 'axios';
 
-const URL = "http://localhost:3300/customers"
+const CUST_URL = "http://localhost:3300/customers";
 
 class Customers extends Component {
   constructor(){
@@ -15,7 +15,7 @@ class Customers extends Component {
   }
 
   componentDidMount(){
-    axios.get(URL)
+    axios.get(CUST_URL)
     .then((response)=>{
       this.setState({customers: response.data});
     })
