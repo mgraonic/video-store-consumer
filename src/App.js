@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Movies from './components/Movies';
+import CustomerList from './components/CustomerList';
+import Search from './components/Search';
 import logo from './logo.svg';
 import './App.css';
 
@@ -29,6 +31,8 @@ class App extends Component {
 
           </ul>
           <Route path="/movies" component={Movies} />
+          <Route path="/customers" component={CustomerList} />
+          <Route path="/search" component={Search} />
           </div>
         </Router>
       </div>
