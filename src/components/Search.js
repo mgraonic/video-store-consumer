@@ -5,6 +5,7 @@ import axios from 'axios';
 import Movie from './Movie';
 
 const DB_URL = "http://localhost:3300/movies?query=";
+const API_URL = "http://localhost:3300/movies";
 
 class Search extends Component {
   constructor(){
@@ -15,12 +16,26 @@ class Search extends Component {
     };
   }
 
+  addToLibrary = (movie) => {
+    // grab movie from state (that exists becuse of search)
+    // create movie object
+    // pass to axios with POST URL + movie object we just made
+    console.log("add to library button clicked");
+    console.log(movie);
+
+    axios.post(API_URL, movie)
+      .then((response)=>{
+        console.log(API_URL);
+        console.log(`successfully posted ${response.data}`);
+      })
+      .catch((error)=>{
+        console.log(`there was an error: ${error.message}`);
+      });
+  }
+
   externalQuery = (query) => {
     axios.get(DB_URL+query)
       .then((response) => {
-        console.log("success query");
-        console.log(response.data);
-
         this.setState({
           dbMovies: response.data
         })
@@ -35,9 +50,12 @@ class Search extends Component {
       return <Movie key={index}
         movieTitle={movie.title}
         overview={movie.overview}
+        releaseDate={movie.release_date}
         image={movie.image_url}
         buttonText="Add to Library"
-        id={movie.external_id} />
+        id={movie.external_id}
+        index={index}
+        callBack={this.addToLibrary} />
     })
 
     return(
