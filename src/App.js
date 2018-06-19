@@ -28,6 +28,9 @@ class App extends Component {
             <li>
               <Link to="/search">Search</Link>
             </li>
+            <li>
+              <RentalInfo  />
+            </li>
 
           </ul>
           <Route path="/movies" component={MovieLibrary} />
