@@ -30,6 +30,7 @@ class MovieLibrary extends Component {
       return <Movie key={index}
       movieTitle={movie.title}
       overview={movie.overview}
+      buttonText="Select for Rental"
       id={movie.id} />
     })
     return(

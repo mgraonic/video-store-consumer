@@ -35,15 +35,16 @@ class Search extends Component {
       return <Movie key={index}
         movieTitle={movie.title}
         overview={movie.overview}
+        image={movie.image_url}
+        buttonText="Add to Library"
         id={movie.external_id} />
     })
 
     return(
       <section>
         <SearchBar externalDBQueryCallback={this.externalQuery} />
-        <ul>
-          {dbMovies}
-        </ul>
+
+        {dbMovies}
       </section>
     )
   }
