@@ -11,6 +11,7 @@ class Movies extends Component {
       image_url: this.props.image,
       inventory: 10
     }
+    
     console.log(`movie button clicked ${movie}`);
 
     this.props.callBack(movie);

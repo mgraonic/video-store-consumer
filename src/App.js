@@ -4,10 +4,23 @@ import MovieLibrary from './components/MovieLibrary';
 import CustomerList from './components/CustomerList';
 import Search from './components/Search';
 import './App.css';
-import RentalInfo from "./components/RentalInfo";
-
 
 class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      movie: {
+        title: "nothing"
+      },
+      customer: {
+        id: 213874614894,
+        name: "fake name"
+      }
+    }
+  }
+
   render() {
 
     return (
@@ -19,6 +32,13 @@ class App extends Component {
         <div>
           <ul>
             <li>
+              <div>
+                <p>selected movie: {this.state.movie.title} </p>
+                <p>selected customer: {this.state.customer.name}</p>
+              </div>
+            </li>
+
+            <li>
               <Link to="/movies">Movies</Link>
             </li>
 
@@ -29,13 +49,18 @@ class App extends Component {
             <li>
               <Link to="/search">Search</Link>
             </li>
-            <li>
-              <RentalInfo  />
-            </li>
 
           </ul>
-          <Route path="/movies" component={MovieLibrary} />
-          <Route path="/customers" component={CustomerList} />
+          <Route path="/movies"
+            render = {() => {
+              return (<MovieLibrary />)
+            }} />
+
+          <Route path="/customers"
+            render = {() => {
+              return (<CustomerList />)
+            }} />
+
           <Route path="/search" component={Search} />
           </div>
         </Router>
