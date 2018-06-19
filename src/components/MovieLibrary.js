@@ -34,7 +34,7 @@ class MovieLibrary extends Component {
     })
     return(
       <ul>
-      {movies}
+        {movies}
       </ul>
     );
   }

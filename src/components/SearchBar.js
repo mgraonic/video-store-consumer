@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 
 class SearchBar extends Component {
 
@@ -19,6 +19,11 @@ class SearchBar extends Component {
   onFormSubmit = (event) => {
     event.preventDefault();
 
+    this.props.externalDBQueryCallback(this.state.query);
+
+    this.setState( {
+      query: ""
+    })
   }
 
   render() {
