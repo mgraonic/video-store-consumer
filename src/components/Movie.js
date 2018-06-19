@@ -16,14 +16,17 @@ class Movies extends Component {
     this.props.callBack(movie);
   }
   render(){
+
     return(
       <div>
         <img src={this.props.image} alt={`${this.props.movieTitle}\'s thumbnail`} />
         <h3>{this.props.movieTitle}</h3>
-        <button onClick={this.buttonClick} type="submit">{this.props.buttonText}</button>
+        <button type="submit">          {this.props.buttonText}
+        </button>
         <p>{this.props.overview}</p>
 
       </div>
+
     )
   }
 }
