@@ -11,19 +11,31 @@ class SearchBar extends Component {
     };
   }
 
+  onInputChange = (event) => {
+    this.setState({query: event.target.value})
+    console.log(this.state);
+  }
+
+  onFormSubmit = (event) => {
+    event.preventDefault();
+
+  }
+
   render() {
 
     return(
-      <form>
+      <form onSubmit={this.onFormSubmit}>
       <label htmlFor="query">Search
       </label>
       <input
-        type='text'
-        name="query"
-        value={this.state.query}/>
-        <button
-        type="submit">Go</button>
+      type='text'
+      name="query"
+      value={this.state.query}
+      onChange={this.onInputChange}/>
+      <button
+      type="submit">Go</button>
       </form>
+
     );
   }
 }
