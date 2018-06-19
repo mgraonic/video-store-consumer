@@ -4,6 +4,7 @@ import MovieLibrary from './components/MovieLibrary';
 import CustomerList from './components/CustomerList';
 import Search from './components/Search';
 import './App.css';
+import RentalInfo from "./components/RentalInfo";
 
 
 class App extends Component {
