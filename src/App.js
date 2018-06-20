@@ -51,32 +51,31 @@ class App extends Component {
     updatedState["customer_name"] = cust_name;
     updatedState["customer_id"] = cust_id;
     this.setState(updatedState);
-
   }
 
   render() {
 
     return (
 
-        <Router>
-          <body className="App">
-            <header className="App-header">
-              <h1 className="App-title">VIDEO STORE |</h1>
+      <Router>
+        <body className="App">
+          <header className="App-header">
+            <h1 className="App-title">VIDEO STORE |</h1>
 
-              <div className="selected-state">
-                  <p>selected movie: {this.state.title} </p>
-                  <p>selected customer name: {this.state.customer_name}</p>
-              </div>
-              <button onClick={this.createRental}>Check out movie</button>
+            <div className="selected-state">
+              <p>selected movie: {this.state.title} </p>
+              <p>selected customer name: {this.state.customer_name}</p>
+            </div>
+            <button onClick={this.createRental}>Check out movie</button>
 
-              <div className="links">
-                <Link to="/movies">Movies</Link>
-                <Link to="/customers">Customers</Link>
-                <Link to="/search">Search</Link>
-              </div>
-              </header>
+            <div className="links">
+              <Link to="/movies">Movies</Link>
+              <Link to="/customers">Customers</Link>
+              <Link to="/search">Search</Link>
+            </div>
+          </header>
 
-            <main>
+          <main>
             <Route path="/movies"
               render = {() => {
                 return (<MovieLibrary callBack={this.updateMovie}/>)
@@ -88,9 +87,9 @@ class App extends Component {
                 }} />
 
                 <Route path="/search" component={Search} />
-                </main>
-              </body>
-            </Router>
+              </main>
+            </body>
+          </Router>
 
 
         );

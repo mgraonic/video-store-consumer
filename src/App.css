@@ -30,7 +30,7 @@
 }
 
 main {
-  height: 400px;
+  height: 70vh;
   background-color: transparent;
   overflow: scroll;
 }
