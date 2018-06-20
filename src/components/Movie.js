@@ -12,8 +12,6 @@ class Movies extends Component {
       inventory: 10
     }
     
-    console.log(`movie button clicked ${movie}`);
-
     this.props.callBack(movie);
   }
   render(){
