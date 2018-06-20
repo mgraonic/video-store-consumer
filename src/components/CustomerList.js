@@ -27,10 +27,12 @@ class Customers extends Component {
 
   render(){
 // map response to customer list
-console.log("Logging customer list state");
-console.log(this.state.customers);
 const customers = this.state.customers.map((customer, index)=>{
-  return <Customer key={index} customerName={customer.name} id={customer.id}/>
+  return <Customer
+    key={index}
+    customerName={customer.name}
+    id={customer.id}
+    callBack={this.props.callBack}/>
 });
 
     return(

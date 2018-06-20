@@ -9,9 +9,10 @@ class Movies extends Component {
       overview: this.props.overview,
       release_date: this.props.releaseDate,
       image_url: this.props.image,
+      external_id: this.props.extID,
       inventory: 10
     }
-    
+
     this.props.callBack(movie);
   }
   render(){
