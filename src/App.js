@@ -21,6 +21,15 @@ class App extends Component {
     }
   }
 
+  // function that changes state
+  updateMovie = () => {
+
+  }
+
+  updateCustomer = () => {
+    
+  }
+
   render() {
 
     return (
