@@ -86,12 +86,10 @@ class App extends Component {
                   return (<CustomerList callBack={this.updateCustomer}/>)
                 }} />
 
-                <Route path="/search" component={Search} />
+              <Route path="/search" component={Search} />
               </main>
-            </body>
-          </Router>
-
-
+        </body>
+      </Router>
         );
       }
     }

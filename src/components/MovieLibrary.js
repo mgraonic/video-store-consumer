@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Movie from './Movie';
+import './MovieLibrary.css';
 
 const MOVIES_URL = "http://localhost:3300/movies";
 
@@ -40,9 +41,9 @@ class MovieLibrary extends Component {
     })
     console.log(this.state.movies.length);
     return(
-      <ul>
+      <section className="movielibrary">
         {movies}
-      </ul>
+      </section>
     );
   }
 }
