@@ -60,33 +60,24 @@ class App extends Component {
       <body className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Our Broke Ass App</h1>
-        </header>
+          </header>
         <Router>
-          <div>
-            <ul>
-              <li>
-                <div>
+          <div className="1">
+
+                <div className="2">
                   <p>selected movie: {this.state.title} </p>
                   <p>selected customer name: {this.state.customer_name}</p>
                 </div>
-              </li>
-              <li>
+
                 <button onClick={this.createRental}>Check out movie</button>
-              </li>
 
-              <li>
                 <Link to="/movies">Movies</Link>
-              </li>
 
-              <li>
                 <Link to="/customers">Customers</Link>
-              </li>
 
-              <li>
+
                 <Link to="/search">Search</Link>
-              </li>
 
-            </ul>
 
             <main>
             <Route path="/movies"
