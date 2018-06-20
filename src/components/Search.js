@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import axios from 'axios';
 import Movie from './Movie';
+import './MovieLibrary.css';
 
 const DB_URL = "http://localhost:3300/movies?query=";
 const API_URL = "http://localhost:3300/movies";
@@ -61,8 +62,9 @@ class Search extends Component {
     return(
       <section>
         <SearchBar externalDBQueryCallback={this.externalQuery} />
-
-        {dbMovies}
+        <section className="movielibrary">
+          {dbMovies}
+        </section>
       </section>
     )
   }
