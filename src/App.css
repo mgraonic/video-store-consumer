@@ -12,13 +12,17 @@
 }
 
 .App-header {
-  height: 80px;
+  height: 100px;
   padding: 20px;
   color: white;
+  display: grid;
+  columngrid-template-columns: 1fr 1fr 1fr 1fr;
+
 }
 
 .App-title {
   font-size: 1.5em;
+  display: inline;
 }
 
 .App-intro {
@@ -29,4 +33,8 @@ main {
   height: 400px;
   background-color: transparent;
   overflow: scroll;
+}
+
+Link {
+  color: white;
 }
