@@ -38,3 +38,7 @@ main {
 Link {
   color: white;
 }
+
+button {
+  width: 100px;
+}
