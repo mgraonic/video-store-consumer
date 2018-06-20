@@ -16,12 +16,16 @@
   padding: 20px;
   color: white;
   display: grid;
-  columngrid-template-columns: 1fr 1fr 1fr 1fr;
-
+  grid-template-columns: 1fr 2fr 1fr 1fr;
 }
 
+
+.header-part {
+  width: 150px;
+  display: inline-block;
+}
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
   display: inline;
 }
 
@@ -29,16 +33,28 @@
   font-size: large;
 }
 
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
 main {
   height: 70vh;
   background-color: transparent;
   overflow: scroll;
 }
 
-Link {
+button {
+  width: 120px;
+  background-color: transparent;
+  /* border: solid transparent 2px; */
+  padding: 5px;
+  margin: 10px;
   color: white;
 }
 
-button {
-  width: 100px;
+.page-link {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
 }
