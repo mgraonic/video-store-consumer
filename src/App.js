@@ -60,19 +60,22 @@ class App extends Component {
       <Router>
         <body className="App">
           <header className="App-header">
-            <h1 className="App-title">VIDEO STORE |</h1>
+            <h1 className="App-title header-part">VIDEO STORE</h1>
 
-            <div className="selected-state">
-              <p>selected movie: {this.state.title} </p>
-              <p>selected customer name: {this.state.customer_name}</p>
+            <div className="links header-part">
+              <Link className="page-link" to="/movies">Movies</Link>
+              <Link to="/customers" className="page-link">Customers</Link>
+              <Link to="/search" className="page-link">Search</Link>
             </div>
+
+            <div className="selected-state header-part">
+              <p>selected movie: {this.state.title} </p>
+              <p>selected customer: {this.state.customer_name}</p>
+            </div>
+
             <button onClick={this.createRental}>Check out movie</button>
 
-            <div className="links">
-              <button><Link to="/movies">Movies</Link></button>
-              <button><Link to="/customers">Customers</Link></button>
-              <button><Link to="/search">Search</Link></button>
-            </div>
+
           </header>
 
           <main>
