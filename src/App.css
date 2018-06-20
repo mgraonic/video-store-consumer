@@ -12,12 +12,11 @@
 }
 
 .App-header {
-  height: 100px;
+  height: 150px;
   padding: 20px;
   color: white;
   display: grid;
   columngrid-template-columns: 1fr 1fr 1fr 1fr;
-
 }
 
 .App-title {
@@ -40,5 +39,8 @@ Link {
 }
 
 button {
-  width: 100px;
+  width: 120px;
+  background-color: transparent;
+  border: solid white 2px;
+  padding: 5px;
 }

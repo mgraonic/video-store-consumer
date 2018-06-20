@@ -69,9 +69,9 @@ class App extends Component {
             <button onClick={this.createRental}>Check out movie</button>
 
             <div className="links">
-              <Link to="/movies">Movies</Link>
-              <Link to="/customers">Customers</Link>
-              <Link to="/search">Search</Link>
+              <button><Link to="/movies">Movies</Link></button>
+              <button><Link to="/customers">Customers</Link></button>
+              <button><Link to="/search">Search</Link></button>
             </div>
           </header>
 
