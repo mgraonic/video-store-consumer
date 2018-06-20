@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Customer.css';
 
 class Customer extends Component {
   buttonClick = () => {
@@ -8,14 +9,13 @@ class Customer extends Component {
   }
   render(){
     return(
-      <li>
-        {this.props.id}
-        {this.props.customerName}
+      <div className="customer">
+        <h3 className="customer_content">{this.props.customerName}</h3>
         <button
           onClick={this.buttonClick}
           type="submit">Add to Rental
         </button>
-      </li>
+      </div>
     );
   }
 }

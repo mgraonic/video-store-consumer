@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Customer from './Customer';
 import axios from 'axios';
+import './CustomerList.css'
 
 const CUST_URL = "http://localhost:3300/customers";
 
@@ -36,13 +37,9 @@ const customers = this.state.customers.map((customer, index)=>{
 });
 
     return(
-      <div>
-        <h2>Hide your customers, hide your wife</h2>
-        <ul>
+      <section className="customer-list">
           { customers }
-        </ul>
-
-      </div>
+      </section>
     );
   }
 }
