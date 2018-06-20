@@ -21,6 +21,11 @@ class App extends Component {
     }
   }
 
+  updateRentalState = (event) => {
+    console.log(event.target);
+    console.log("update rental state reached");
+  }
+
   render() {
 
     return (
@@ -32,10 +37,7 @@ class App extends Component {
         <div>
           <ul>
             <li>
-              <div>
-                <p>selected movie: {this.state.movie.title} </p>
-                <p>selected customer: {this.state.customer.name}</p>
-              </div>
+
             </li>
 
             <li>
@@ -53,12 +55,12 @@ class App extends Component {
           </ul>
           <Route path="/movies"
             render = {() => {
-              return (<MovieLibrary />)
+              return (<MovieLibrary rentalMovie= {updateRentalState} />)
             }} />
 
           <Route path="/customers"
             render = {() => {
-              return (<CustomerList />)
+                return (<CustomerList rentalCustomer= {updateRentalState} />)
             }} />
 
           <Route path="/search" component={Search} />
