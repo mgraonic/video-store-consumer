@@ -60,7 +60,8 @@ class App extends Component {
       <body className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Our Broke Ass App</h1>
-          </header>
+        </header>
+
         <Router>
           <div className="1">
 
