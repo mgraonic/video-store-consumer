@@ -20,11 +20,15 @@
   align-items: center;
 }
 
-
 .header-part {
   width: 150px;
   display: inline-block;
 }
+
+.selected-items {
+  border: white 2px solid;
+}
+
 .App-title {
   font-size: 2em;
   display: inline;
@@ -38,8 +42,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-
 }
+
 main {
   height: 70vh;
   background-color: transparent;
@@ -73,11 +77,12 @@ button:hover {
 }
 
 ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
+  -webkit-appearance: none;
+  width: 7px;
 }
+
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }

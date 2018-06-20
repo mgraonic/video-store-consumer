@@ -68,9 +68,9 @@ class App extends Component {
               <Link to="/search" className="page-link">Search</Link>
             </div>
 
-            <div className="header-part">
-              <p>selected movie: {this.state.title} </p>
-              <p>selected customer: {this.state.customer_name}</p>
+            <div className="header-part selected-items">
+              <p>Selected Movie: {this.state.title} </p>
+              <p>Selected Customer: {this.state.customer_name}</p>
             </div>
 
             <button onClick={this.createRental}>Check out movie</button>

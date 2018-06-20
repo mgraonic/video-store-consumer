@@ -22,7 +22,7 @@ class Movies extends Component {
       <div className="movie">
         <img className="movie__content" src={this.props.image} alt={`${this.props.movieTitle}\'s thumbnail`} />
         <h3 className="movie__content">{this.props.movieTitle}</h3>
-        <button className="movie__content" onClick={this.buttonClick} type="submit">{this.props.buttonText}</button>
+        <button onClick={this.buttonClick} type="submit">{this.props.buttonText}</button>
       </div>
 
     )
