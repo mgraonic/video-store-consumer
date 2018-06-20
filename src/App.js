@@ -57,27 +57,24 @@ class App extends Component {
   render() {
 
     return (
-      <body className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Our Broke Ass App</h1>
-          </header>
-        <Router>
-          <div className="1">
 
-                <div className="2">
+        <Router>
+          <body className="App">
+            <header className="App-header">
+              <h1 className="App-title">VIDEO STORE |</h1>
+
+              <div className="selected-state">
                   <p>selected movie: {this.state.title} </p>
                   <p>selected customer name: {this.state.customer_name}</p>
-                </div>
+              </div>
+              <button onClick={this.createRental}>Check out movie</button>
 
-                <button onClick={this.createRental}>Check out movie</button>
-
+              <div className="links">
                 <Link to="/movies">Movies</Link>
-
                 <Link to="/customers">Customers</Link>
-
-
                 <Link to="/search">Search</Link>
-
+              </div>
+              </header>
 
             <main>
             <Route path="/movies"
@@ -92,10 +89,10 @@ class App extends Component {
 
                 <Route path="/search" component={Search} />
                 </main>
-              </div>
+              </body>
             </Router>
 
-          </body>
+
         );
       }
     }
