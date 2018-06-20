@@ -27,14 +27,18 @@ class MovieLibrary extends Component {
   render() {
 
     const movies = this.state.movies.map((movie,index)=>{
-      return <Movie key={index}
+      return <Movie
+      key={index}
+      index={index}
       movieTitle={movie.title}
       overview={movie.overview}
       image={movie.image_url}
       buttonText="Select for Rental"
       id={movie.id}
+      extID={movie.external_id}
       callBack={this.props.callBack} />
     })
+    console.log(this.state.movies.length);
     return(
       <ul>
         {movies}
