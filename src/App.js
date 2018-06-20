@@ -89,6 +89,7 @@ class App extends Component {
 
               <Route path="/search" component={Search} />
               </main>
+          <footer>Maja & Angela &copy; 2018</footer>
         </body>
       </Router>
         );
