@@ -16,22 +16,15 @@
   padding: 20px;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 2.7fr 3fr 1fr;
   align-items: center;
-}
-
-.header-part {
-  width: 150px;
-  display: inline-block;
-}
-
-.selected-items {
-  border: white 2px solid;
 }
 
 .App-title {
   font-size: 2em;
   display: inline;
+  border-right: white 2px solid;
+  padding-right: 20px;
 }
 
 .App-intro {
@@ -42,6 +35,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+}
+
+.selected-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border-left: white 2px solid;
+    padding: 3px 0;
 }
 
 main {
