@@ -57,7 +57,7 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <body className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Our Broke Ass App</h1>
         </header>
@@ -87,6 +87,8 @@ class App extends Component {
               </li>
 
             </ul>
+
+            <main>
             <Route path="/movies"
               render = {() => {
                 return (<MovieLibrary callBack={this.updateMovie}/>)
@@ -98,9 +100,11 @@ class App extends Component {
                 }} />
 
                 <Route path="/search" component={Search} />
+                </main>
               </div>
             </Router>
-          </div>
+
+          </body>
         );
       }
     }

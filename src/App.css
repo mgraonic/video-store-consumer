@@ -8,7 +8,7 @@
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: 100%;
-  /* background-attachment: scroll; */
+  background-attachment: fixed;
 }
 
 .App-header {
@@ -25,7 +25,8 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+main {
+  height: 600px;
+  background-color: transparent;
+  overflow: scroll;
 }
