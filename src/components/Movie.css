@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
+  justify-items: center;
 }
 
 .movie h3 {
@@ -17,9 +18,10 @@
 }
 
 .movie button {
-  width: 80%;
+  width: 73%;
   margin: 0;
-  text-align: center;
+  position: center;
+  padding: 0 15%;
 }
 
 .movie h3 {
@@ -34,4 +36,13 @@
   text-align: center;
   font-weight: 100;
   overflow: hidden;
+}
+
+img.movie:hover {
+  width: 100%;
+  /* min-width: 236px; */
+}
+
+* {
+  border: yellow dotted 1px;
 }
