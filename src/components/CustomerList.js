@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Customer from './Customer';
 import axios from 'axios';
 import './CustomerList.css'
+import PropTypes from 'prop-types';
 
 const CUST_URL = "http://localhost:3300/customers";
 
-class Customers extends Component {
+class CustomerList extends Component {
   constructor(){
     super();
 
@@ -21,10 +21,9 @@ class Customers extends Component {
       this.setState({customers: response.data});
     })
     .catch((error)=>{
-      console.log("there was an error");
+      console.log(`There was an error: ${error}`);
     });
-  };
-
+  }
 
   render(){
 // map response to customer list
@@ -44,5 +43,8 @@ const customers = this.state.customers.map((customer, index)=>{
   }
 }
 
+CustomerList.propTypes = {
+  callBack: PropTypes.func.isRequired
+};
 
-export default Customers;
+export default CustomerList;

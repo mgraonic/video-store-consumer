@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Customer.css';
+import PropTypes from 'prop-types';
 
 class Customer extends Component {
   buttonClick = () => {
@@ -19,5 +20,11 @@ class Customer extends Component {
     );
   }
 }
+
+Customer.propTypes = {
+  customerName: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  callBack: PropTypes.func.isRequired
+};
 
 export default Customer;
