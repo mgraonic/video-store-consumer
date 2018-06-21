@@ -20,7 +20,6 @@ class Search extends Component {
     // grab movie from state (that exists becuse of search)
     // create movie object
     // pass to axios with POST URL + movie object we just made
-    console.log("add to library button clicked");
     console.log(movie);
 
     axios.post(API_URL, movie)
@@ -53,7 +52,7 @@ class Search extends Component {
         releaseDate={movie.release_date}
         image={movie.image_url}
         buttonText="Add to Library"
-        id={movie.external_id}
+        extID={movie.external_id}
         index={index}
         callBack={this.addToLibrary} />
     })

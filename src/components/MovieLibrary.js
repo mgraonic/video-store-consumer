@@ -36,11 +36,10 @@ class MovieLibrary extends Component {
       overview={movie.overview}
       image={movie.image_url}
       buttonText="Select for Rental"
-      id={movie.id}
+      extID={movie.id}
       extID={movie.external_id}
       callBack={this.props.callBack} />
     })
-    console.log(this.state.movies.length);
     return(
       <section className="movielibrary">
         {movies}

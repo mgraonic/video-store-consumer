@@ -32,11 +32,11 @@ class Movie extends Component {
 }
 
 Movie.propTypes = {
-  movieTitle: PropTypes.string,
+  movieTitle: PropTypes.string.isRequired,
   overview: PropTypes.string,
   releaseDate: PropTypes.string,
   image: PropTypes.string,
-  extID: PropTypes.string,
+  extID: PropTypes.number.isRequired,
   inventory: PropTypes.number,
   buttonText: PropTypes.string,
   callBack: PropTypes.func.isRequired
