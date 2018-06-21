@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import axios from 'axios';
 import Movie from './Movie';
@@ -42,7 +41,7 @@ class Search extends Component {
         })
       })
       .catch((error) => {
-        console.log("error query");
+        console.log(`There was an error: ${error}`);
       });
   }
 

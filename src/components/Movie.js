@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './Movie.css';
+import PropTypes from 'prop-types';
+ import './Movie.css';
 
-class Movies extends Component {
+class Movie extends Component {
 // this is a change
   buttonClick = () => {
     let movie = {
@@ -20,7 +20,7 @@ class Movies extends Component {
 
     return(
       <div className="movie">
-        <img className="movie__content" src={this.props.image} alt={`${this.props.movieTitle}\'s thumbnail`} />
+        <img className="movie__content" src={this.props.image} alt={`${this.props.movieTitle}'s thumbnail`} />
         <h3 className="movie__content">{this.props.movieTitle}</h3>
         <button
           onClick={this.buttonClick} type="submit">{this.props.buttonText}
@@ -31,4 +31,15 @@ class Movies extends Component {
   }
 }
 
-export default Movies;
+Movie.propTypes = {
+  movieTitle: PropTypes.string,
+  overview: PropTypes.string,
+  releaseDate: PropTypes.string,
+  image: PropTypes.string,
+  extID: PropTypes.string,
+  inventory: PropTypes.number,
+  buttonText: PropTypes.string,
+  callBack: PropTypes.func.isRequired
+};
+
+export default Movie;

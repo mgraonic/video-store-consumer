@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import Movie from './Movie';
 import './MovieLibrary.css';
@@ -21,9 +22,9 @@ class MovieLibrary extends Component {
       this.setState({movies: response.data});
     })
     .catch((error)=>{
-      console.log("there was an error");
+      console.log(`There was an error: ${error}`);
     });
-  };
+  }
 
   render() {
 
@@ -47,4 +48,8 @@ class MovieLibrary extends Component {
     );
   }
 }
+
+MovieLibrary.propTypes = {
+  callBack: PropTypes.func.isRequired
+};
 export default MovieLibrary;

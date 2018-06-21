@@ -21,9 +21,9 @@ class Customers extends Component {
       this.setState({customers: response.data});
     })
     .catch((error)=>{
-      console.log("there was an error");
+      console.log(`There was an error: ${error}`);
     });
-  };
+  }
 
 
   render(){
