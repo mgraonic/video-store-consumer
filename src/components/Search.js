@@ -38,6 +38,7 @@ class Search extends Component {
         this.setState({
           dbMovies: response.data
         })
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(`There was an error: ${error}`);

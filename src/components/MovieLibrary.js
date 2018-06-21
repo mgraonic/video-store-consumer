@@ -20,6 +20,7 @@ class MovieLibrary extends Component {
     axios.get(MOVIES_URL)
     .then((response)=>{
       this.setState({movies: response.data});
+      console.log(response.data);
     })
     .catch((error)=>{
       console.log(`There was an error: ${error}`);
@@ -36,7 +37,6 @@ class MovieLibrary extends Component {
       overview={movie.overview}
       image={movie.image_url}
       buttonText="Select for Rental"
-      extID={movie.id}
       extID={movie.external_id}
       callBack={this.props.callBack} />
     })
