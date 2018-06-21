@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .App-header {
@@ -38,11 +39,11 @@
 }
 
 .selected-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    border-left: white 2px solid;
-    padding: 3px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border-left: white 2px solid;
+  padding: 3px 0;
 }
 
 main {

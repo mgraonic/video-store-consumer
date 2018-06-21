@@ -15,8 +15,8 @@ class App extends Component {
     super();
 
     this.state = {
-      title: "nothing",
-      customer_name: "test name",
+      title: "",
+      customer_name: "",
       customer_id: 0,
     }
   }
