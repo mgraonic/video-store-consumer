@@ -23,7 +23,7 @@ class Customer extends Component {
 
 Customer.propTypes = {
   customerName: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   callBack: PropTypes.func.isRequired
 
 };

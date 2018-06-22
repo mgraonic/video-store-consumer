@@ -36,7 +36,7 @@ Movie.propTypes = {
   overview: PropTypes.string,
   releaseDate: PropTypes.string,
   image: PropTypes.string,
-  extID: PropTypes.number.isRequired,
+  extID: PropTypes.number,
   inventory: PropTypes.number,
   buttonText: PropTypes.string,
   callBack: PropTypes.func.isRequired

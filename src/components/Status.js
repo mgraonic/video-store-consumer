@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 class Status extends React.Component {
   static propTypes = {
-    message: PropTypes.string,
-    type: PropTypes.strings
+    message: PropTypes.string
   }
 
   render() {
     return (
-      <section className= {`status ${this.props.type}`}>
+      <section>
         {this.props.message}
       </section>
     );

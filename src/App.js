@@ -34,7 +34,6 @@ class App extends Component {
   }
 
   clearStatus = () => {
-    console.log(`got into clear status on App.js`);
     this.setState({
       status: {
         message: null
@@ -57,7 +56,8 @@ class App extends Component {
       this.updateStatus(`Successfully rented ${this.state.title} to ${this.state.customer_name}`)
     })
     .catch((error)=>{
-      console.log(`failed with errors: ${error}`);
+      console.log(`There was an error: ${error}`);
+      this.updateStatus(`You must select a movie and customer to create a rental`)
     });
   }
 
@@ -84,7 +84,7 @@ class App extends Component {
       <Router>
         <body className="App">
           <header className="App-header">
-            <h1 className="App-title header-part">VIDEO STORE</h1>
+            <Link onClick={this.clearStatus} to="/" className="App-title header-part">VIDEO STORE</Link>
 
             <div className="links header-part">
               <Link onClick={this.clearStatus} className="page-link" to="/movies">Movies</Link>
@@ -102,10 +102,10 @@ class App extends Component {
 
           <Status
             message={this.state.status.message}
-            type={this.state.status.type}
             />
 
           <main>
+
             <Route path="/movies"
               render = {() => {
                 return (<MovieLibrary
@@ -132,8 +132,11 @@ class App extends Component {
                         />
                     </main>
                     <footer>Maja & Angela &copy; 2018</footer>
-                  </body>
-                </Router>
+                      </body>
+                    </Router>
+
+
+
               );
             }
           }
