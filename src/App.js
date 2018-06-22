@@ -43,16 +43,14 @@ class App extends Component {
 
   createRental = () => {
     let RENTAL_URL = BASE_URL + `${this.state.title}` + '/check-out'
-    console.log(RENTAL_URL);
 
     let date = new Date();
     date.setDate(date.getDate() + 7);
 
     let params = {title: this.state.title, customer_id: this.state.customer_id, due_date:  date};
-
     axios.post(RENTAL_URL, params)
     .then((response)=>{
-      console.log(`succeeded with response: ${response.data}`);
+      console.log(`%c Successfully submitted a rental!`, 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
       this.updateStatus(`Successfully rented ${this.state.title} to ${this.state.customer_name}`)
     })
     .catch((error)=>{
