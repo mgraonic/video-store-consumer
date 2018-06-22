@@ -20,17 +20,15 @@ class App extends Component {
       customer_name: "",
       customer_id: 0,
       status: {
-        message: 'loaded the page',
-        type: 'success'
+        message: 'Successfully loaded the page'
       }
     }
   }
 
-  updateStatus = (message, type) => {
+  updateStatus = (message) => {
   this.setState({
     status: {
-      message: message,
-      type: type
+      message: message
     }
   })
 }
