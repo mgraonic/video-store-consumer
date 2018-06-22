@@ -20,18 +20,27 @@ class App extends Component {
       customer_name: "",
       customer_id: 0,
       status: {
-        message: 'Successfully loaded the page'
+        message: null
       }
     }
   }
 
   updateStatus = (message) => {
-  this.setState({
-    status: {
-      message: message
-    }
-  })
-}
+    this.setState({
+      status: {
+        message: message
+      }
+    })
+  }
+
+  clearStatus = () => {
+    console.log(`got into clear status on App.js`);
+    this.setState({
+      status: {
+        message: null
+      }
+    })
+  }
 
   createRental = () => {
     let RENTAL_URL = BASE_URL + `${this.state.title}` + '/check-out'
@@ -78,9 +87,9 @@ class App extends Component {
             <h1 className="App-title header-part">VIDEO STORE</h1>
 
             <div className="links header-part">
-              <Link className="page-link" to="/movies">Movies</Link>
-              <Link to="/customers" className="page-link">Customers</Link>
-              <Link to="/search" className="page-link">Search</Link>
+              <Link onClick={this.clearStatus} className="page-link" to="/movies">Movies</Link>
+              <Link onClick={this.clearStatus} to="/customers" className="page-link">Customers</Link>
+              <Link onClick={this.clearStatus} to="/search" className="page-link">Search</Link>
             </div>
 
             <div className="header-part selected-items">
@@ -92,39 +101,41 @@ class App extends Component {
           </header>
 
           <Status
-          message={this.state.status.message}
-          type={this.state.status.type}
-        />
+            message={this.state.status.message}
+            type={this.state.status.type}
+            />
 
           <main>
             <Route path="/movies"
               render = {() => {
                 return (<MovieLibrary
                   callBack={this.updateMovie}
-                  updateStatusCallback={this.updateStatus}/>)
-              }} />
+                  updateStatusCallback={this.updateStatus}
+                  />)
+                }} />
 
-              <Route path="/customers"
-                render = {() => {
-                  return (<CustomerList
-                    callBack={this.updateCustomer}
-                    updateStatusCallback={this.updateStatus}/>)
-                }}
-                />
-
-              <Route path="/search"
-                render = { () => {
-                  return (
-                    <Search
+                <Route path="/customers"
+                  render = {() => {
+                    return (<CustomerList
+                      callBack={this.updateCustomer}
                       updateStatusCallback={this.updateStatus}/>)
-              }}
-              />
-              </main>
-          <footer>Maja & Angela &copy; 2018</footer>
-        </body>
-      </Router>
-        );
-      }
-    }
+                    }}
+                    />
 
-    export default App;
+                  <Route path="/search"
+                    render = { () => {
+                      return (
+                        <Search
+                          updateStatusCallback={this.updateStatus}
+                          />)
+                        }}
+                        />
+                    </main>
+                    <footer>Maja & Angela &copy; 2018</footer>
+                  </body>
+                </Router>
+              );
+            }
+          }
+
+          export default App;

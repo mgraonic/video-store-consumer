@@ -20,7 +20,6 @@ class MovieLibrary extends Component {
     axios.get(MOVIES_URL)
     .then((response)=>{
       this.setState({movies: response.data});
-      console.log(response.data);
       this.props.updateStatusCallback(`Successfully loaded ${response.data.length} movies!`);
     })
     .catch((error)=>{

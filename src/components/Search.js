@@ -35,6 +35,10 @@ class Search extends Component {
       });
   }
 
+  clickHandler = () => {
+    this.props.clearStatusCallback();
+  }
+
   externalQuery = (query) => {
     axios.get(DB_URL+query)
       .then((response) => {
@@ -65,7 +69,8 @@ class Search extends Component {
 
     return(
       <section>
-        <SearchBar externalDBQueryCallback={this.externalQuery} />
+        <SearchBar
+          onClick={this.clickHandler} externalDBQueryCallback={this.externalQuery} />
         <section className="movielibrary">
           {dbMovies}
         </section>
