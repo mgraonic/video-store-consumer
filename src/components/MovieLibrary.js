@@ -21,6 +21,7 @@ class MovieLibrary extends Component {
     .then((response)=>{
       this.setState({movies: response.data});
       console.log(response.data);
+      this.props.updateStatusCallback(`Successfully loaded ${response.data.length} movies!`);
     })
     .catch((error)=>{
       console.log(`There was an error: ${error}`);
@@ -38,7 +39,8 @@ class MovieLibrary extends Component {
       image={movie.image_url}
       buttonText="Select for Rental"
       extID={movie.external_id}
-      callBack={this.props.callBack} />
+      callBack={this.props.callBack}
+      />
     })
     return(
       <section className="movielibrary">
@@ -49,6 +51,7 @@ class MovieLibrary extends Component {
 }
 
 MovieLibrary.propTypes = {
-  callBack: PropTypes.func.isRequired
+  callBack: PropTypes.func.isRequired,
+  updateStatusCallback: PropTypes.func
 };
 export default MovieLibrary;

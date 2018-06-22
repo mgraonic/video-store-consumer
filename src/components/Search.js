@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import axios from 'axios';
 import Movie from './Movie';
 import './MovieLibrary.css';
+import PropTypes from 'prop-types';
 
 const DB_URL = "http://localhost:3300/movies?query=";
 const API_URL = "http://localhost:3300/movies";
@@ -26,9 +27,11 @@ class Search extends Component {
       .then((response)=>{
         console.log(API_URL);
         console.log(`successfully posted ${response.data}`);
+        this.props.updateStatusCallback(`Successfully added ${movie.title} to your Movie Library!`)
       })
       .catch((error)=>{
         console.log(`there was an error: ${error.message}`);
+        this.props.updateStatusCallback(`Failed to add movie: ${error.message}`)
       });
   }
 
@@ -39,9 +42,11 @@ class Search extends Component {
           dbMovies: response.data
         })
         console.log(response.data);
+        this.props.updateStatusCallback(`Found ${response.data.length} movie titles related to your search!`);
       })
       .catch((error) => {
         console.log(`There was an error: ${error}`);
+          this.props.updateStatusCallback(`Failed to load movies: ${error.message}`);
       });
   }
 
@@ -68,5 +73,9 @@ class Search extends Component {
     )
   }
 }
+
+Search.propTypes = {
+  updateStatusCallback: PropTypes.func
+};
 
 export default Search;

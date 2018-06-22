@@ -4,6 +4,7 @@ import MovieLibrary from './components/MovieLibrary';
 import CustomerList from './components/CustomerList';
 import Search from './components/Search';
 import axios from 'axios';
+import Status from './components/Status';
 
 import './App.css';
 
@@ -18,8 +19,21 @@ class App extends Component {
       title: "",
       customer_name: "",
       customer_id: 0,
+      status: {
+        message: 'loaded the page',
+        type: 'success'
+      }
     }
   }
+
+  updateStatus = (message, type) => {
+  this.setState({
+    status: {
+      message: message,
+      type: type
+    }
+  })
+}
 
   createRental = () => {
     let RENTAL_URL = BASE_URL + `${this.state.title}` + '/check-out'
@@ -33,6 +47,7 @@ class App extends Component {
     axios.post(RENTAL_URL, params)
     .then((response)=>{
       console.log(`succeeded with response: ${response.data}`);
+      this.updateStatus(`Successfully rented ${this.state.title} to ${this.state.customer_name}`)
     })
     .catch((error)=>{
       console.log(`failed with errors: ${error}`);
@@ -40,10 +55,11 @@ class App extends Component {
   }
 
   // function that changes state
-  updateMovie = (banana) => {
+  updateMovie = (movie) => {
     let updatedState = this.state;
-    updatedState["title"] = banana.title;
+    updatedState["title"] = movie.title;
     this.setState(updatedState);
+    this.updateStatus(`Successfully added ${this.state.title} to your rental!`);
   }
 
   updateCustomer = (cust_name, cust_id) => {
@@ -51,6 +67,7 @@ class App extends Component {
     updatedState["customer_name"] = cust_name;
     updatedState["customer_id"] = cust_id;
     this.setState(updatedState);
+    this.updateStatus(`Successfully added ${this.state.customer_name} to your rental!`);
   }
 
   render() {
@@ -76,18 +93,34 @@ class App extends Component {
             <button onClick={this.createRental}>Check out movie</button>
           </header>
 
+          <Status
+          message={this.state.status.message}
+          type={this.state.status.type}
+        />
+
           <main>
             <Route path="/movies"
               render = {() => {
-                return (<MovieLibrary callBack={this.updateMovie}/>)
+                return (<MovieLibrary
+                  callBack={this.updateMovie}
+                  updateStatusCallback={this.updateStatus}/>)
               }} />
 
               <Route path="/customers"
                 render = {() => {
-                  return (<CustomerList callBack={this.updateCustomer}/>)
-                }} />
+                  return (<CustomerList
+                    callBack={this.updateCustomer}
+                    updateStatusCallback={this.updateStatus}/>)
+                }}
+                />
 
-              <Route path="/search" component={Search} />
+              <Route path="/search"
+                render = { () => {
+                  return (
+                    <Search
+                      updateStatusCallback={this.updateStatus}/>)
+              }}
+              />
               </main>
           <footer>Maja & Angela &copy; 2018</footer>
         </body>

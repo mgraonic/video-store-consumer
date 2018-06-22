@@ -19,6 +19,7 @@ class CustomerList extends Component {
     axios.get(CUST_URL)
     .then((response)=>{
       this.setState({customers: response.data});
+      this.props.updateStatusCallback(`Successfully loaded ${response.data.length} customers!`);
     })
     .catch((error)=>{
       console.log(`There was an error: ${error}`);
@@ -44,7 +45,8 @@ const customers = this.state.customers.map((customer, index)=>{
 }
 
 CustomerList.propTypes = {
-  callBack: PropTypes.func.isRequired
+  callBack: PropTypes.func.isRequired,
+  updateStatusCallback: PropTypes.func
 };
 
 export default CustomerList;

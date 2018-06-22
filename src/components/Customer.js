@@ -25,6 +25,7 @@ Customer.propTypes = {
   customerName: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   callBack: PropTypes.func.isRequired
+
 };
 
 export default Customer;
